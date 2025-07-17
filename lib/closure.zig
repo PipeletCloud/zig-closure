@@ -5,7 +5,7 @@ pub fn ImplClosure(comptime T: type) type {
         const Self = @This();
 
         args: Arguments,
-        func: T,
+        func: *const T,
 
         pub const Arguments = blk: {
             const params = @typeInfo(T).@"fn".params;
